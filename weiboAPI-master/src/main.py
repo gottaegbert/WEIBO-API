@@ -31,15 +31,15 @@ class WBSpider():
         # 没有目录的时候自动创建
         if not os.path.isdir(file_dir):
             os.makedirs(file_dir)
-        fileh = logging.FileHandler(file_dir+f'/{name}-{logging.getLevelName(log_level)}.log', 'w', encoding='utf-8')
+        fileh = logging.FileHandler(file_dir + f'/{name}-{logging.getLevelName(log_level)}.log', 'w', encoding='utf-8')
         formatter = logging.Formatter("%(asctime)s;%(levelname)s;%(message)s",
-                              "%Y-%m-%d %H:%M:%S")
+                                      "%Y-%m-%d %H:%M:%S")
         fileh.setFormatter(formatter)
 
         log = logging.getLogger()  # root logger
         for hdlr in log.handlers[:]:  # remove all old handlers
             log.removeHandler(hdlr)
-        log.addHandler(fileh)      # set the new handler
+        log.addHandler(fileh)  # set the new handler
         log.setLevel(log_level)
 
         return fileh
@@ -48,15 +48,16 @@ class WBSpider():
         self.MYCURSOR.execute(f'SELECT * FROM {table}')
         columns = [col[0] for col in self.MYCURSOR.description]
         return [dict(zip(columns, row)) for row in self.MYCURSOR.fetchall()]
-    
+
     def sel_from_table(self, table, key, value):
         self.MYCURSOR.execute(f"SELECT * FROM {table} WHERE {key} = '{value}'")
         columns = [col[0] for col in self.MYCURSOR.description]
         return [dict(zip(columns, row)) for row in self.MYCURSOR.fetchall()]
-        
+
     def del_from_table(self, table, key, value):
         self.MYCURSOR.execute(f"DELETE FROM {table} WHERE {key} = '{value}'")
         self.MYDB.commit()
+
     def ins_to_table(self, table, data_dict):
         try:
             columns = ', '.join(data_dict.keys())
@@ -75,6 +76,7 @@ class WBSpider():
         # 待爬取队列，采用广度优先搜索
         self.crawling = deque(self.fetch_table())
         self.crawled = deque(self.fetch_table('Crawled'))
+
     def save_crawl_to_bmob(self):
         for crawling_item in self.crawling:
             crawling_item.save()
@@ -98,17 +100,18 @@ class WBSpider():
         logging.info('正在初始化爬取队列...')
         self.init_crawl()
         self.init_session()
-    
+
     def get_data(self, url):
         # 每次请求之前等待数秒，防止因为速度过快被封
         time.sleep(config['crawl']['PERIOD'])
+
         res = self.session.get(url).json()
         if 'msg' in res.keys() and res['msg'] == '请求过于频繁,歇歇吧':
             time.sleep(config['crawl']['FORBID_PAUSE'])
             logging.warnng(f'等待完毕，重新请求')
             return self.get_data(url)
         return res
-    
+
     def crawl_user_following(self, uid):
         """
         返回此用户的所有 following 的 (uid, uname)（字典）
@@ -124,13 +127,14 @@ class WBSpider():
                 if len(data['data']['cards']) == 0:
                     logging.info(f'用户 {uid} 的 following 爬取完毕')
                     return result
-                
+
                 for card in data['data']['cards']:
                     for card_group_item in card['card_group']:
                         # 只有类型为 10 才是真正的关注列表
                         if card_group_item['card_type'] != 10:
                             continue
-                        result.append({'uid': card_group_item['user']['id'], 'uname': card_group_item['user']['screen_name']})
+                        result.append(
+                            {'uid': card_group_item['user']['id'], 'uname': card_group_item['user']['screen_name']})
                 cur_page += 1
             logging.info(f'将新增加 {len(result)} 个 following 到队列中')
             return result
@@ -138,17 +142,18 @@ class WBSpider():
             logging.error('following 抓取出错')
             logging.error(traceback.format_exc())
             return []
-        
+
     def get_weibo_containerid(self, uid):
         try:
             # https://m.weibo.cn/api/container/getIndex?type=uid&value=1669879400
             url = INFO_URL.format(uid)
             data = self.get_data(url)
-            return data['data']['tabsInfo']['tabs'][1]['containerid'] 
+            return data['data']['tabsInfo']['tabs'][1]['containerid']
         except:
             logging.error('containerid 抓取出错')
             logging.error(traceback.format_exc())
             logging.error(data)
+
     def crawl_user_weibo(self, uid):
         """
         将所有的微博爬取到，并存储到 Weibo 表中
@@ -173,17 +178,17 @@ class WBSpider():
                     # 如果是转发微博的话，忽略
                     if "retweeted_status" in mblog:
                         continue
-                    
+
                     selector = etree.HTML(mblog["text"])
                     a_text = selector.xpath("//a/text()")
                     # 将 HTML 转换为 txt
                     # 参考 https://www.zybuluo.com/Alston/note/778377
                     text = etree.tostring(selector, method="text", encoding="UTF-8").decode('utf-8')
                     img_emoji = selector.xpath("//span/img/@alt")
-                    
+
                     weibo = {'uid': uid, 'text': text, 'mid': mblog['mid'], 'img_emoji': img_emoji}
                     self.ins_to_table('Weibo', weibo)
-                
+
                     # 抓取评论
                     self.crawl_weibo_comments(mblog['mid'])
 
@@ -192,7 +197,7 @@ class WBSpider():
             logging.error('微博抓取出错')
             logging.error(traceback.format_exc())
             logging.error(data)
-        
+
     def crawl_weibo_comments(self, mid, max=10):
         """
         将某一篇微博的评论爬取 10 页，并存储到 Comment 表中，将 mid（博文唯一标识）设置为传入的 mid
@@ -211,7 +216,7 @@ class WBSpider():
                     cid = comment["id"]
                     text = etree.tostring(selector, method="text", encoding="UTF-8").decode('utf-8')
                     img_emoji = selector.xpath("//span/img/@alt")
-                    
+
                     comment = {'cid': cid, 'mid': mid, 'text': text, 'img_emoji': img_emoji}
                     self.ins_to_table('Comment', comment)
 
@@ -234,7 +239,7 @@ class WBSpider():
         """
         开始爬取（广度优先搜索）
         """
-        # 理论上会结束，实际上并不会结束
+        #理论上会结束，实际上并不会结束
         while len(self.crawling) > 0:
             crawling_user = self.crawling.popleft()
             adj_arr = self.crawl(crawling_user['uid'])
@@ -253,11 +258,15 @@ class WBSpider():
                     self.crawling.append(crawling_user_new)
                     logging.info(f"{v['uid']}-{v['uname']} 已加入到 Crawling 队列和数据库中")
 
+
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
     sys.exit(0)
-if __name__ == "__main__":    
+
+
+if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
-    
+
     spider = WBSpider()
+
     spider.startBFS()

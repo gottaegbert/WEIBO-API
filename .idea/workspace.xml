@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16aa268b-9855-427a-83a0-78ccb65aaf09" name="Default Changelist" comment="" />
+    <list default="true" id="16aa268b-9855-427a-83a0-78ccb65aaf09" name="Default Changelist" comment="change user">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weiboAPI-master/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/weiboAPI-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/weiboAPI-master.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weiboAPI-master/old/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/weiboAPI-master/old/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weiboAPI-master/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/weiboAPI-master/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weiboAPI-master/src/util/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/weiboAPI-master/src/util/config.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1a7TL669hTQ7C7OgSPozQYhGq0a" />
   <component name="ProjectViewState">
@@ -15,7 +26,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/weiboAPI-master/src/main.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -23,6 +36,30 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="weiboAPI-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\dell\anaconda3\envs\html5up-forty\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/weiboAPI-master/src" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weiboAPI-master/src/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -36,6 +73,8 @@
       <updated>1586085575048</updated>
       <workItem from="1586085581472" duration="2729000" />
       <workItem from="1586088726830" duration="379000" />
+      <workItem from="1586239767726" duration="1782000" />
+      <workItem from="1586252731127" duration="9184000" />
     </task>
     <servers />
   </component>
@@ -43,13 +82,72 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="127" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586253013789">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state x="127" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1344.840@0.0.1344.840" timestamp="1586253013789" />
+    <state x="276" y="14" key="CommitChangelistDialog2" timestamp="1586262136870">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state x="276" y="14" key="CommitChangelistDialog2/0.0.1344.840@0.0.1344.840" timestamp="1586262136870" />
+    <state x="127" y="66" key="DiffContextDialog" timestamp="1586261199272">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state x="127" y="66" key="DiffContextDialog/0.0.1344.840@0.0.1344.840" timestamp="1586261199272" />
+    <state x="452" y="175" key="FileChooserDialogImpl" timestamp="1586253010657">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state x="452" y="175" key="FileChooserDialogImpl/0.0.1344.840@0.0.1344.840" timestamp="1586253010657" />
+    <state width="1301" height="213" key="GridCell.Tab.0.bottom" timestamp="1586264144725">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state width="1301" height="213" key="GridCell.Tab.0.bottom/0.0.1344.840@0.0.1344.840" timestamp="1586264144725" />
+    <state width="1301" height="213" key="GridCell.Tab.0.center" timestamp="1586264144724">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state width="1301" height="213" key="GridCell.Tab.0.center/0.0.1344.840@0.0.1344.840" timestamp="1586264144724" />
+    <state width="1301" height="213" key="GridCell.Tab.0.left" timestamp="1586264144724">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state width="1301" height="213" key="GridCell.Tab.0.left/0.0.1344.840@0.0.1344.840" timestamp="1586264144724" />
+    <state width="1301" height="213" key="GridCell.Tab.0.right" timestamp="1586264144724">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state width="1301" height="213" key="GridCell.Tab.0.right/0.0.1344.840@0.0.1344.840" timestamp="1586264144724" />
+    <state width="1286" height="264" key="GridCell.Tab.1.bottom" timestamp="1586257609597">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state width="1286" height="264" key="GridCell.Tab.1.bottom/0.0.1344.840@0.0.1344.840" timestamp="1586257609597" />
+    <state width="1286" height="264" key="GridCell.Tab.1.center" timestamp="1586257609596">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state width="1286" height="264" key="GridCell.Tab.1.center/0.0.1344.840@0.0.1344.840" timestamp="1586257609596" />
+    <state width="1286" height="264" key="GridCell.Tab.1.left" timestamp="1586257609596">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state width="1286" height="264" key="GridCell.Tab.1.left/0.0.1344.840@0.0.1344.840" timestamp="1586257609596" />
+    <state width="1286" height="264" key="GridCell.Tab.1.right" timestamp="1586257609597">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state width="1286" height="264" key="GridCell.Tab.1.right/0.0.1344.840@0.0.1344.840" timestamp="1586257609597" />
     <state x="48" y="83" key="SettingsEditor" timestamp="1586087702941">
       <screen x="0" y="0" width="1344" height="840" />
     </state>
     <state x="48" y="83" key="SettingsEditor/0.0.1344.840@0.0.1344.840" timestamp="1586087702941" />
-    <state x="353" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1586085585088">
+    <state width="679" height="427" key="XDebugger.FullValuePopup" timestamp="1586256746638">
       <screen x="0" y="0" width="1344" height="840" />
     </state>
-    <state x="353" y="244" key="com.intellij.ide.util.TipDialog/0.0.1344.840@0.0.1344.840" timestamp="1586085585087" />
+    <state width="679" height="427" key="XDebugger.FullValuePopup/0.0.1344.840@0.0.1344.840" timestamp="1586256746638" />
+    <state x="353" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1586252755419">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state x="353" y="244" key="com.intellij.ide.util.TipDialog/0.0.1344.840@0.0.1344.840" timestamp="1586252755419" />
+    <state x="351" y="152" width="642" height="534" key="find.popup" timestamp="1586258600081">
+      <screen x="0" y="0" width="1344" height="840" />
+    </state>
+    <state x="351" y="152" width="642" height="534" key="find.popup/0.0.1344.840@0.0.1344.840" timestamp="1586258600081" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/WEIBO_API$main.coverage" NAME="main Coverage Results" MODIFIED="1586264144702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weiboAPI-master/src" />
   </component>
 </project>

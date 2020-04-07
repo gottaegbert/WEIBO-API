@@ -18,7 +18,7 @@ config = {
         'CONNECTION': {
             'host': "localhost",
             'user': 'root',
-            'password':'1234567',
+            'password':'husiyu[]990327',
             'port':"3306",
             'charset': 'utf8mb4'
         }
