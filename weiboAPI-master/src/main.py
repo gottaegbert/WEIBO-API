@@ -227,6 +227,17 @@ class WBSpider():
             logging.error(traceback.format_exc())
             logging.error(data)
 
+
+    def is_date(self, since_date):
+        """判断日期格式是否正确"""
+        try:
+            if ':' in since_date:
+                datetime.strptime(since_date, '%Y-%m-%d %H:%M')
+            else:
+                datetime.strptime(since_date, '%Y-%m-%d')
+            return True
+        except ValueError:
+            return False
     def crawl(self, uid):
         """
         爬取 uid 所代表的用户

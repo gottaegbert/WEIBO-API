@@ -25,10 +25,11 @@ config = {
     },
     'crawl': {
         # 用来初始化爬取队列
-        'START_USER': '1769119665',
+        'START_USER': '2712370302',
         # 每两次请求之间等待 PERIOD 秒
         'PERIOD': 4,
         # 被封之后等待 5 分钟再次请求
         'FORBID_PAUSE': 300
-    }
+    },
+    'since_date': {"2020-03-29"}
 }
