@@ -26,6 +26,7 @@ FOLLOWING_URL = 'https://m.weibo.cn/api/container/getIndex?containerid=231051_-_
 
 class WBSpider():
 
+
     def init_logging(self, name='crawling', log_level=logging.INFO):
         file_dir = os.path.dirname(os.path.realpath('__file__')) + "/log"
         # 没有目录的时候自动创建
@@ -100,6 +101,7 @@ class WBSpider():
         logging.info('正在初始化爬取队列...')
         self.init_crawl()
         self.init_session()
+
 
     def get_data(self, url):
         # 每次请求之前等待数秒，防止因为速度过快被封
@@ -176,8 +178,8 @@ class WBSpider():
                         continue
                     mblog = card["mblog"]
                     # 如果是转发微博的话，忽略
-                    if "retweeted_status" in mblog:
-                        continue
+                    #if "retweeted_status" in mblog:
+                        #continue
 
                     selector = etree.HTML(mblog["text"])
                     a_text = selector.xpath("//a/text()")
